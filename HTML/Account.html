@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アカウント | MERILU</title>
+  <link rel="icon" href="favicon_io/android-chrome-192x192.png" type="image/png">  <!---ファビコン--->
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/account.css">
+</head>
+
+<body>
+   <header class = "header">
+     <!---左側のメニュー--->
+     <button class = "hamburger" aria-label = "ハンバーガーメニュー"> <!---ハンバーガーメニュー---> 
+       <span class = "hamburger_bar"></span> 
+       <span class = "hamburger_bar"></span> 
+       <span class = "hamburger_bar"></span> 
+     </button> 
+
+
+     <!---タイトルロゴ---> 
+     <div class = "logo">
+       <a href = "Stylish.html"> <img src = "../Picture/Title/Logo/MERILU_web2.png" alt = "MERILU"></a> 
+     </div>
+    
+     <!---右側のメニュー--->
+     <nav class = "list-menu">
+       <ul class="list">
+         <li>
+           <a href="Fovarite.html" class="favorite-link">
+             <svg class="menu-icon heart-icon header-heart"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+
+               <path d="M22 8.86222C22 10.4087 21.4062 11.8941 20.3458 12.9929
+                        C17.9049 15.523 15.5374 18.1613 13.0053 20.5997
+                        C12.4249 21.1505 11.5042 21.1304 10.9488 20.5547
+                        L3.65376 12.9929C1.44875 10.7072 1.44875 7.01723 3.65376 4.73157
+                        C5.88044 2.42345 9.50794 2.42345 11.7346 4.73157
+                        L11.9998 5.00642L12.2648 4.73173
+                        C13.3324 3.6245 14.7864 3 16.3053 3
+                        C17.8242 3 19.2781 3.62444 20.3458 4.73157
+                        C21.4063 5.83045 22 7.31577 22 8.86222Z"
+
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="1.5"
+                        stroke-linejoin="round"/>
+             </svg>
+           </a>
+         </li>
+         <li>
+           <a href="Account.html" id="accountLink">
+           <svg id="accountIcon"
+                class="menu-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+             <path d="M5 20V19C5 15.134 8.13401 12 12 12
+                      C15.866 12 19 15.134 19 19V20"
+                   stroke="currentColor"
+                   stroke-width="1.5"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"/>
+
+             <path d="M12 12C14.2091 12 16 10.2091 16 8
+                      C16 5.79086 14.2091 4 12 4
+                      C9.79086 4 8 5.79086 8 8
+                      C8 10.2091 9.79086 12 12 12Z"
+                   stroke="currentColor"
+                   stroke-width="1.5"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"/>
+           </svg>
+           </a>
+         </li>
+         <li class = "search-trigger"><a href = "#"><img src = "../Picture/Icons/search.svg" class = "menu-icon" alt = "検索"></a> 
+           <div class = "search-dropdown"> <button class = "search-close" aria-label ="閉じる">×</button> <input type = "text" placeholder = "キーワードを入力"></div>
+         </li> 
+         <li class = "cart-icon">
+           <a href = "Cart.html"><img src = "../Picture/Icons/shopping-bag.svg" class = "menu-icon" alt = "カート"> 
+             <span id = "cartCount" class = "cart-count"></span>
+           </a> 
+         </li> 
+       </ul> 
+     </nav> 
+   </header> 
+
+   <!---左側のメニューアニメーション---> 
+   <nav class = "drawer-menu"> 
+     <ul> 
+       <li><a href = "Stylish.html">HOME</a></li>
+       <li><a href = "Fovarite.html">FOVARITE</a></li> 
+       <li><a href = "Account.html">ACCOUNT</a></li> 
+       <li><a href = "Cart.html">CART</a></li>
+       <li><a href = "About.html">ABOUT</a></li>
+       <li><a href = "Contact.html">CONTACT</a></li> 
+     </ul> 
+   </nav> 
+
+   <!---左側のメニューを開いている場合は暗くする--->
+   <div class = "overlay"></div>
+
+
+   <main class="account-main">
+
+     <div class="account-wrapper">
+
+       <h1 class="account-title">ACCOUNT DETAILS</h1>
+
+       <section class="account-section">
+
+         <div class="account-row">
+           <div class="account-label">お名前</div>
+           <div class="account-value" id="userName"></div>
+         </div>
+
+         <div class="account-row">
+           <div class="account-label">メールアドレス</div>
+           <div class="account-value" id="userEmail"></div>
+         </div>
+
+         <div class="account-row">
+           <div class="account-label">電話番号</div>
+           <div class="account-value" id="userPhone"></div>
+         </div>
+
+         <div class="account-row">
+           <div class="account-label">郵便番号</div>
+           <div class="account-value" id="userZip"></div>
+         </div>
+
+         <div class="account-row">
+           <div class="account-label">住所</div>
+           <div class="account-value" id="userAddress"></div>
+         </div>
+
+       </section>
+
+       <div class="account-actions">
+         <button class="account-edit">情報を編集する</button>
+         <button class="logout-btn">ログアウト</button>
+       </div>
+
+     </div>
+
+     <div class="popup" id="popup">
+       <div class="popup-box">
+         <p id="popupMessage"></p>
+       </div>
+     </div>
+
+   </main>
+
+   <footer> 
+     <p>© MERILU</p> 
+   </footer> 
+
+  <script src="../JavaScript/account.js" defer></script>
+  <script src="../JavaScript/header.js" defer></script>
+
+</body>
+</html>

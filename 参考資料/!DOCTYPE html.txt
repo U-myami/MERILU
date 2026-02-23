@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERILU - 香りでやさしくなる</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --milk-white: #FCFAFA;
+            --baby-pink: #F4C2C2;
+            --pale-gray: #E8E8E8;
+            --text-dark: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--milk-white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(244, 194, 194, 0.2) 0%, rgba(252, 250, 250, 1) 70%);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scent-card {
+            transition: all 0.5s ease;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(244, 194, 194, 0.1);
+        }
+
+        .scent-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--baby-pink);
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--baby-pink);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* カスタムスクロールバー */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--milk-white);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--baby-pink);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-white/30 backdrop-blur-md">
+        <div class="text-2xl tracking-[0.2em] serif font-light text-[#E19D9D]">MÉRILU</div>
+        <div class="hidden md:flex space-x-12 text-sm tracking-widest uppercase font-light">
+            <a href="#concept" class="nav-link">Concept</a>
+            <a href="#collection" class="nav-link">Collection</a>
+            <a href="#moments" class="nav-link">Moments</a>
+            <a href="#shop" class="nav-link">Shop</a>
+        </div>
+        <div class="flex space-x-4">
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer hover:text-[#E19D9D] transition-colors"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex flex-col items-center justify-center hero-gradient px-4 overflow-hidden">
+        <div class="z-10 text-center fade-in" id="hero-content">
+            <h1 class="text-4xl md:text-6xl font-extralight tracking-[0.3em] serif mb-6 text-[#E19D9D]">MÉRILU</h1>
+            <p class="text-lg md:text-xl font-light tracking-[0.15em] mb-4 opacity-80">かわいいは、香りから</p>
+            <p class="text-sm tracking-widest font-light text-gray-400">抱きしめたくなる香り</p>
+        </div>
+        
+        <!-- 背景のあしらい（香りの粒子をイメージ） -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gray-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse" style="animation-delay: 2s;"></div>
+        
+        <div class="absolute bottom-10 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-gray-300"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="concept" class="py-32 px-4 max-w-4xl mx-auto text-center fade-in">
+        <h2 class="text-sm tracking-[0.4em] uppercase text-gray-400 mb-12">Concept</h2>
+        <div class="space-y-8 leading-relaxed font-light">
+            <p class="text-2xl md:text-3xl font-light text-[#D49E9E]">香りでやさしくなる</p>
+            <p class="text-base md:text-lg">
+                強く魅せる香水ではなく、<br class="hidden md:block">
+                ふと笑顔になる距離感の香り。<br><br>
+                近づいたとき、抱きしめたとき、<br class="hidden md:block">
+                すれ違ったときにだけ、そっと残る。<br><br>
+                日常のさりげない瞬間を、もっと愛おしく。
+            </p>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-32 bg-[#F9F9F9]">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-sm tracking-[0.4em] uppercase text-center text-gray-400 mb-20">First Collection</h2>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Scent 1 -->
+                <div class="scent-card p-8 rounded-2xl text-center fade-in">
+                    <div class="aspect-[4/5] bg-white rounded-lg mb-8 flex items-center justify-center relative overflow-hidden group">
+                        <!-- ボトルのプレースホルダー（半透明ガラスイメージ） -->
+                        <div class="w-24 h-40 bg-white/80 border border-gray-100 rounded-md shadow-sm relative">
+                            <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-2 bg-gray-200 rounded-sm"></div>
+                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-full px-2 text-[8px] tracking-tighter opacity-30 text-center serif font-bold">MÉRILU<br>FUWA</div>
+                        </div>
+                        <div class="absolute inset-0 bg-pink-50/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-xl serif tracking-wider mb-2">01. Fuwa</h3>
+                    <p class="text-xs tracking-widest text-gray-400 mb-4">Cotton / Vanilla / Musk</p>
+                    <p class="text-sm font-light leading-relaxed mb-6">
+                        お風呂上がりのような、柔らかく包み込む温かさ。<br>
+                        王道のかわいさを、もっと身近に。
+                    </p>
+                    <p class="text-sm tracking-widest font-light text-[#D49E9E]">¥8,800 (tax in)</p>
+                </div>
+
+                <!-- Scent 2 -->
+                <div class="scent-card p-8 rounded-2xl text-center fade-in" style="transition-delay: 0.2s;">
+                    <div class="aspect-[4/5] bg-white rounded-lg mb-8 flex items-center justify-center relative overflow-hidden group">
+                        <div class="w-24 h-40 bg-white/80 border border-gray-100 rounded-md shadow-sm relative">
+                            <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-2 bg-gray-200 rounded-sm"></div>
+                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-full px-2 text-[8px] tracking-tighter opacity-30 text-center serif font-bold">MÉRILU<br>MOMO</div>
+                        </div>
+                        <div class="absolute inset-0 bg-pink-50/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-xl serif tracking-wider mb-2">02. Momo</h3>
+                    <p class="text-xs tracking-widest text-gray-400 mb-4">Peach / Floral</p>
+                    <p class="text-sm font-light leading-relaxed mb-6">
+                        もぎたてのピーチのような、甘すぎない瑞々しさ。<br>
+                        日常にほんの少しの彩りと、ときめきを。
+                    </p>
+                    <p class="text-sm tracking-widest font-light text-[#D49E9E]">¥9,200 (tax in)</p>
+                </div>
+
+                <!-- Scent 3 -->
+                <div class="scent-card p-8 rounded-2xl text-center fade-in" style="transition-delay: 0.4s;">
+                    <div class="aspect-[4/5] bg-white rounded-lg mb-8 flex items-center justify-center relative overflow-hidden group">
+                        <div class="w-24 h-40 bg-white/80 border border-gray-100 rounded-md shadow-sm relative">
+                            <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-2 bg-gray-200 rounded-sm"></div>
+                            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-full px-2 text-[8px] tracking-tighter opacity-30 text-center serif font-bold">MÉRILU<br>HIBI</div>
+                        </div>
+                        <div class="absolute inset-0 bg-pink-50/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-xl serif tracking-wider mb-2">03. Hibi</h3>
+                    <p class="text-xs tracking-widest text-gray-400 mb-4">Citrus / Tea</p>
+                    <p class="text-sm font-light leading-relaxed mb-6">
+                        晴れた休日の朝。清潔感のあるティーノート。<br>
+                        毎日を特別にする、何気ない透明感。
+                    </p>
+                    <p class="text-sm tracking-widest font-light text-[#D49E9E]">¥8,800 (tax in)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moments Section -->
+    <section id="moments" class="py-32 px-4">
+        <h2 class="text-sm tracking-[0.4em] uppercase text-center text-gray-400 mb-20">Beautiful Moments</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="aspect-square bg-gray-100 rounded-sm fade-in overflow-hidden">
+                <div class="w-full h-full hover:scale-105 transition-transform duration-1000 bg-[#E8E8E8] flex items-center justify-center text-xs tracking-widest text-gray-400">お風呂上がり</div>
+            </div>
+            <div class="aspect-square bg-gray-100 rounded-sm fade-in overflow-hidden" style="transition-delay: 0.1s;">
+                <div class="w-full h-full hover:scale-105 transition-transform duration-1000 bg-[#F4C2C2]/20 flex items-center justify-center text-xs tracking-widest text-gray-400">白いシャツ</div>
+            </div>
+            <div class="aspect-square bg-gray-100 rounded-sm fade-in overflow-hidden" style="transition-delay: 0.2s;">
+                <div class="w-full h-full hover:scale-105 transition-transform duration-1000 bg-[#E8E8E8] flex items-center justify-center text-xs tracking-widest text-gray-400">柔らかい髪</div>
+            </div>
+            <div class="aspect-square bg-gray-100 rounded-sm fade-in overflow-hidden" style="transition-delay: 0.3s;">
+                <div class="w-full h-full hover:scale-105 transition-transform duration-1000 bg-[#F4C2C2]/10 flex items-center justify-center text-xs tracking-widest text-gray-400">晴れた休日</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section class="py-32 bg-white px-4">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2 fade-in">
+                <div class="w-full aspect-[3/4] bg-[#FDFDFD] rounded-3xl shadow-inner border border-gray-50 flex items-center justify-center">
+                    <!-- ボトルイメージを表現 -->
+                    <div class="relative">
+                        <div class="w-32 h-48 bg-white/40 border border-gray-100 rounded-lg shadow-xl backdrop-blur-sm relative z-10"></div>
+                        <div class="absolute -right-4 top-8 w-16 h-8 bg-[#F4C2C2] rounded-full blur-2xl opacity-40"></div>
+                        <!-- リボンのあしらい -->
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-6 border-b-2 border-pink-200 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 fade-in">
+                <h2 class="text-sm tracking-[0.4em] uppercase text-gray-400 mb-8">The Bottle</h2>
+                <h3 class="text-2xl font-light mb-6 text-[#D49E9E]">手に取るたび、心おどるカタチ</h3>
+                <p class="text-base font-light leading-relaxed mb-8">
+                    ころんとした長方形の半透明ガラスは、光を優しく取り込みます。<br><br>
+                    細いリボンがあしらわれたボトルは、インテリアとしても馴染み、毎日のメイクアップの仕上げにそっと彩りを添えます。
+                </p>
+                <div class="w-12 h-px bg-pink-200"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="shop" class="bg-[#FDFDFD] border-t border-gray-100 py-20 px-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-2xl serif tracking-[0.2em] mb-6 text-[#E19D9D]">MÉRILU</h2>
+                <p class="text-sm font-light tracking-widest mb-8 opacity-60">香りでやさしくなる。あなたと、あなたの大切な誰かのために。</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="opacity-40 hover:opacity-100 transition-opacity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                    <a href="#" class="opacity-40 hover:opacity-100 transition-opacity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xs tracking-[0.3em] uppercase mb-6 font-bold text-gray-300">Information</h4>
+                <ul class="space-y-4 text-sm font-light opacity-60">
+                    <li><a href="#" class="hover:text-[#E19D9D]">About Us</a></li>
+                    <li><a href="#" class="hover:text-[#E19D9D]">Shipping Policy</a></li>
+                    <li><a href="#" class="hover:text-[#E19D9D]">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-[#E19D9D]">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs tracking-[0.3em] uppercase mb-6 font-bold text-gray-300">Newsletter</h4>
+                <p class="text-xs font-light mb-4 opacity-50">新作情報をお届けします。</p>
+                <div class="flex border-b border-gray-200 py-2">
+                    <input type="email" placeholder="Email" class="bg-transparent text-sm w-full outline-none font-light">
+                    <button class="text-xs uppercase tracking-widest text-[#E19D9D]">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-20 pt-10 border-t border-gray-50">
+            <p class="text-[10px] tracking-widest opacity-30">&copy; 2024 MÉRILU OFFICIAL. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hero Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.getElementById('hero-content');
+            if(heroContent) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+    </script>
+</body>
+</html>
