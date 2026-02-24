@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "ROSE BLOSSOM",
       price: 10000,
       salePrice: null,
-      image: "../Picture/Items/item1.jpg",
+      image: "/MERILU/Picture/Items/item1.jpg",
       description: [
         "やさしく広がるフローラルの香りが、日常にそっと彩りを添えるオードパルファム",
         "透明感のあるピンクのボトルが象徴するように、甘すぎず上品な香り立ちで、",
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "ÉCLAT ROSE",
       price: 12000,
       salePrice: null,
-      image: "../Picture/Items/item2.jpg",
+      image: "/MERILU/Picture/Items/item2.jpg",
       description: [
         "透明感のあるピンクが印象的な、洗練されたオードパルファム",
         "すっきりとしたフローラルの立ち上がりから、やわらかく女性らしい余韻へと移ろいます",
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "ROSE NOSTALGIA",
       price: 8000,
       salePrice: null,
-      image: "../Picture/Items/item3.jpg",
+      image: "/MERILU/Picture/Items/item3.jpg",
       description: [
         "レースとローズに包まれた、どこか懐かしく気品あふれるオードパルファム",
         "やさしく霧のように広がる香りが、纏う人の所作まで美しく演出します",
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "LUMINOUS SERIES",
       price: 13000,
       salePrice: 11500,
-      image: "../Picture/Items/item4.jpg",
+      image: "/MERILU/Picture/Items/item4.jpg",
       description: [
         "光を受けてきらめく、宝石のようなガラスボトルが印象的なオードパルファム",
         "洗練された甘さと奥行きのある香りが、纏う人の個性を引き立てます",
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "BLOOM RIBBON",
       price: 9500,
       salePrice: null,
-      image: "../Picture/Items/item5.jpg",
+      image: "/MERILU/Picture/Items/item5.jpg",
       description: [
         "やさしく咲き誇る花々をイメージした、フェミニンなオードパルファム",
         "透明感のあるフローラルブーケが、身にまとう人の魅力を自然に引き出します",
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "CRYSTAL VEIL",
       price: 11000,
       salePrice: 10000,
-      image: "../Picture/Items/item6.jpg",
+      image: "/MERILU/Picture/Items/item6.jpg",
       description: [
         "宝石のように輝くクリスタルカットボトルに閉じ込めた、上品でやわらかな香り",
         "ひと吹きで空気を変える、洗練された大人のためのパルファム",
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "NOIR ROSÉ",
       price: 7000,
       salePrice: null,
-      image: "../Picture/Items/item7.jpg",
+      image: "/MERILU/Picture/Items/item7.jpg",
       description: [
         "可憐さと大胆さをあわせ持つ、大人のためのオードパルファム",
         "淡いピンクのボトルに結ばれたブラックリボンが、",
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       series: "SERENDIPITY ROSÉ",
       price: 13000,
       salePrice: 9800,
-      image: "../Picture/Items/item8.jpg",
+      image: "/MERILU/Picture/Items/item8.jpg",
       description: [
         "ふとした瞬間に訪れる、幸せのきっかけ",
         "軽やかで明るい香りが、日常をポジティブに彩るオードパルファム",
@@ -334,4 +334,5 @@ favoriteBtn.addEventListener("click", () => {
 }
 
 });
+
 
